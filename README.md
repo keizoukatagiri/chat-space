@@ -13,6 +13,37 @@ Things you may want to cover:
 
 * Database creation
 
+userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|
+|email|integer|
+|username|varchar255|
+
+belongs_to group
+has_many masseges
+
+massegesテーブル
+||Column|Type|Options|
+|------|----|-------|
+|masseges|text|
+|image|string|
+|group_id|interger|
+|user_id|interger|
+
+belongs_to user
+
+groups_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+ Association
+- belongs_to :group
+- belongs_to :user
+
 * Database initialization
 
 * How to run the test suite
