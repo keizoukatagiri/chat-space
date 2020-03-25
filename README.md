@@ -18,20 +18,20 @@ userテーブル
 |------|----|-------|
 |id|integer|null: false｜
 |email|integer|null: false｜
-|username|string|null: false｜
-
+|name|string|null: false｜
 
 has_many groups, through: groups_users
+has_many groups_users
 has_many messages
 
 groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false｜
+|name|string|null: false｜
 
-belongs_to :user
+has_many :users
 
-massegesテーブル
+messagesテーブル
 ||Column|Type|Options|
 |------|----|-------|
 |messages|text|
