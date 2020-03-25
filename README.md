@@ -16,7 +16,6 @@ Things you may want to cover:
 userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|
 |email|integer|
 |username|varchar255|
 
