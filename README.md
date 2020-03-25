@@ -21,8 +21,15 @@ userテーブル
 |username|string|null: false｜
 
 
-has_many messages, through: image
+has_many groups, through: groups_users
+has_many messages
 
+groupテーブル
+|Column|Type|Options|
+|------|----|-------|
+|groupname|string|null: false｜
+
+belongs_to :user
 
 massegesテーブル
 ||Column|Type|Options|
@@ -32,6 +39,8 @@ massegesテーブル
 |group_id|interger|null: false, foreign_key: true|
 |user_id|interger|null: false, foreign_key: true|
 
+belongs_to :user
+belongs_to :group
 
 groups_usersテーブル
 
