@@ -16,19 +16,20 @@ Things you may want to cover:
 userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|integer|
-|username|varchar255|
+|id|integer|null: false｜
+|email|integer|null: false｜
+|username|string|null: false｜
 
-belongs_to group
-has_many masseges
+
+has_many messages
 
 massegesテーブル
 ||Column|Type|Options|
 |------|----|-------|
-|masseges|text|
+|messages|text|
 |image|string|
-|group_id|interger|
-|user_id|interger|
+|group_id|interger|null: false, foreign_key: true|
+|user_id|interger|null: false, foreign_key: true|
 
 belongs_to user
 
