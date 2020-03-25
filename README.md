@@ -32,6 +32,7 @@ massegesテーブル
 |group_id|interger|null: false, foreign_key: true|
 |user_id|interger|null: false, foreign_key: true|
 
+belong_to user
 
 groups_usersテーブル
 
