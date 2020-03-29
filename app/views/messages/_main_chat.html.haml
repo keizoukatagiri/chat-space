@@ -1,0 +1,35 @@
+.chat_main 
+  .main-header
+    .header-left
+      %p.left-box 
+        test
+      %ul.left-box-u 
+        %li.a
+          member: 
+        %li.left-box-un 
+          masa
+        
+        
+    .edit-btm Edit
+  
+  .message
+    .message-box
+      .message-boxin    
+        .message-name masa
+        .message-info 
+      .message-text おはよう
+
+      .message-boxin    
+        .message-name masa
+        .message-info 
+      .message-text こんばんは
+
+  
+  .from
+    %from.new-message
+      .input
+        %input{type: "text", class: "input_text", placeholder: "type a message"}
+          %label{class: "input_image"}
+            = icon('fas', 'image')
+            %input{type: "file", class: "input_image_file"}
+      %input{type: "submit", class: "submit-btn"}

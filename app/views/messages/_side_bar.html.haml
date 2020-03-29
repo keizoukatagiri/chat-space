@@ -1,0 +1,20 @@
+.chat_side
+  .side_header
+    .side_box
+      %p.user-name  masa
+      %ul.news_list
+        %li.edit_user
+          = link_to "#" do
+            = icon('fas', 'edit')
+        %li.new_group
+          = link_to "#" do
+            = icon('fas', 'cog')
+          
+
+
+  .groups
+    = link_to "#", class: "group" do
+      
+      .group
+        .group_name test
+        .group_message まだメッセージがありません
