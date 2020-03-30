@@ -40,6 +40,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
+gem 'pry-rails'
+
 gem 'devise'
 
 group :development do

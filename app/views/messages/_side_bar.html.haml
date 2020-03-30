@@ -4,15 +4,18 @@
       %p.user-name 
         = current_user.name
       %ul.news_list
-        %li.edit_user
-          = link_to "#" do
-            = icon('fas', 'edit')
         %li.new_group
+          = link_to new_group_path do
+            = icon('fas', 'edit')
+        %li.edit_user
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'icon')
 
   .groups
-    = link_to "#", class: "group" do
+    - current_user.groups.each do |group|
       .group
-        .group_name test
-        .group_message まだメッセージがありません
+        = link_to "#" ,class:"group" do
+          .group_name
+            = group.name
+          .group_message
+            まだメッセージがありません
