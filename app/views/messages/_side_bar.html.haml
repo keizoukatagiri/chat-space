@@ -1,14 +1,15 @@
 .chat_side
   .side_header
     .side_box
-      %p.user-name  masa
+      %p.user-name 
+        = current_user.name
       %ul.news_list
         %li.edit_user
           = link_to "#" do
             = icon('fas', 'edit')
         %li.new_group
-          = link_to "#" do
-            = icon('fas', 'cog')
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog', class: 'icon')
 
   .groups
     = link_to "#", class: "group" do
