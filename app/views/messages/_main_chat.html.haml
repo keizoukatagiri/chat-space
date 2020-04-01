@@ -2,15 +2,19 @@
   .main-header
     .header-left
       %p.left-box 
-        test
-      %ul.left-box-u 
-        %li.a
-          member: 
-        %li.left-box-un 
-          masa
-    .edit-btm Edit
-  
-  .message
+        .left-box-username
+          = @group.name
+      %p.left-box-u 
+        member:
+        - @group.users.each do |user|
+          = user.name
+    .edit-btm
+      = link_to edit_group_path(@group) do 
+        Edit
+
+  .messages
+    = render @messages
+
     .message-box
       .message-boxin    
         .message-name masa
@@ -22,11 +26,11 @@
         .message-info 
       .message-text こんばんは
 
-  .from
-    %from.new-message
-      .input
-        %input{type: "text", class: "input_text", placeholder: "type a message"}
-          %label{class: "input_image"}
-            = icon('fas', 'image')
-            %input{type: "file", class: "input_image_file"}
-      %input{type: "submit", class: "submit-btn"}
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'input_text', placeholder: 'type a message'
+      .input_text
+        = f.label :image, class:'from__input__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'from__submit-btn'
