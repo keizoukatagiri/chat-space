@@ -28,9 +28,11 @@
 
   .form
     = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'input_text', placeholder: 'type a message'
-      .input_text
+      .input_box
+        = f.text_field :content, class: 'input_text', placeholder: 'type a message'
         = f.label :image, class:'from__input__image' do
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'from__submit-btn'
+        
+        
