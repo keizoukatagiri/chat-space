@@ -4,6 +4,7 @@
 }
 .chat_main{
   width: calc(100% - 300px); 
+  position: flex;
   .main-header {
     height: 100px;
     padding: 0 40px;
@@ -59,10 +60,9 @@
    
   .messages{
     height: calc(100vh - 190px);
-    padding: 15px 40px;
+    padding: 50px 40px 15px;
     overflow: scroll;
     box-sizing: border-box;
-    margin-top: 35px;
     .message{
       .upper-message{
         display: flex;
@@ -89,11 +89,11 @@
   }
  
   .form{
-    height: 54px;
+    height: 90px;
     padding: 20px 40px;
     background-color: #ddd;
-     
-  
+    box-sizing: border-box;
+
     .new_message {
       display: flex;
       .input_box{
